@@ -48,3 +48,17 @@ body {
 .transition-none {
     view-transition-name: none;
 }
+
+.card {
+    @apply bg-background border-background-700 rounded-2xl border p-8 shadow-2xl;
+}
+
+.clickable {
+    @apply text-white;
+    transition: 300ms ease;
+}
+.clickable:hover {
+    @apply text-primary;
+    transform: translateY(-0.75rem) scale(1.03);
+}
+

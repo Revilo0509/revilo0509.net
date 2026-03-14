@@ -25,7 +25,8 @@
 </svelte:head>
 
 <Background />
-
 <Header />
 
-{@render children()}
+<div class="w-screen h-screen">
+    {@render children()}
+</div>

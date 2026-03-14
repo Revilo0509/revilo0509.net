@@ -1,29 +1,35 @@
-import { WebSocketServer, WebSocket } from 'ws';
 import type { RequestHandler } from './$types';
 import { presence } from '$lib/discord';
 
-let wss: WebSocketServer;
+export const GET: RequestHandler = () => {
+    let interval: NodeJS.Timeout;
 
-export const GET: RequestHandler = ({ platform }) => {
-    if (!wss) {
-        const server = (platform as { server?: ReturnType<typeof import('http').createServer> })
-            .server;
+    const stream = new ReadableStream({
+        start(controller) {
+            const encoder = new TextEncoder();
 
-        wss = new WebSocketServer({
-            server,
-            path: '/api/presence',
-        });
+            const send = () => {
+                try {
+                    const data = JSON.stringify({ status: presence?.status ?? 'offline' });
+                    controller.enqueue(encoder.encode(`data: ${data}\n\n`));
+                } catch {
+                    clearInterval(interval);
+                }
+            };
 
-        wss.on('connection', (socket: WebSocket) => {
-            const status = presence?.status ?? 'offline';
+            send();
+            interval = setInterval(send, 5000);
+        },
+        cancel() {
+            if (interval) clearInterval(interval);
+        },
+    });
 
-            socket.send(JSON.stringify({ status }));
-
-            socket.on('close', () => {
-                console.log('client disconnected');
-            });
-        });
-    }
-
-    return new Response('WebSocket server running');
+    return new Response(stream, {
+        headers: {
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            Connection: 'keep-alive',
+        },
+    });
 };
