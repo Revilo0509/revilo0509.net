@@ -30,4 +30,3 @@
 <div class="w-screen h-screen">
     {@render children()}
 </div>
-
