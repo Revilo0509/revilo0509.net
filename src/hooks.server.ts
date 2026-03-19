@@ -1,4 +1,4 @@
 import { startDiscord } from '$lib/discord';
-import { DISCORD_BOT_TOKEN, USER_ID, GUILD_ID } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
-startDiscord(DISCORD_BOT_TOKEN, USER_ID, GUILD_ID);
+startDiscord(env.DISCORD_BOT_TOKEN, env.USER_ID, env.GUILD_ID);
