@@ -59,6 +59,6 @@ body {
 }
 .clickable:hover {
     @apply text-primary;
-    transform: translateY(-0.75rem) scale(1.03);
+    transform: scale(1.1);
 }
 
