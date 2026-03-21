@@ -11,7 +11,7 @@ export function startDiscord(token: string, userId: string, guildId: string) {
         ],
     });
 
-    client.once('ready', async () => {
+    client.once('clientReady', async () => {
         const guild = await client.guilds.fetch(guildId);
         await guild.members.fetch(userId);
         console.log('Discord connected');
