@@ -4,9 +4,13 @@ import { init, register, locale, waitLocale } from 'svelte-i18n';
 register('en', () => import('$lib/locales/en.json'));
 register('sv', () => import('$lib/locales/sv.json'));
 
+const fallbackLanguage = 'en';
+
 await init({
-    fallbackLocale: 'en',
-    initialLocale: browser ? localStorage.getItem('language') || 'en' : 'en',
+    fallbackLocale: fallbackLanguage,
+    initialLocale: browser
+        ? localStorage.getItem('language') || fallbackLanguage
+        : fallbackLanguage,
 });
 
 await waitLocale();
