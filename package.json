@@ -44,6 +44,7 @@
         "lucide-svelte": "^0.577.0",
         "motion-sv": "^0.1.10",
         "runed": "^0.37.1",
+        "svelte-i18n": "^4.0.1",
         "svelte-motion": "^0.12.2"
     }
 }

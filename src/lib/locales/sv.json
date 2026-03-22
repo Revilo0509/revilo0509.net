@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "home": "Hem",
+        "about": "Om Mig"
+    },
+    "page": {
+        "about-me": {
+            "greeting": "Hej! Jag är Revilo.",
+            "description": "Jag är en elektronik-, homelab- och mjukvaruutvecklingsentusiast. Jag hoppar mellan olika programmeringsspråk beroende på projektet. Men jag spelar ganska mycket spel!"
+        }
+    },
+    "error": {
+        "go-home": "Gå hem"
+    }
+}
