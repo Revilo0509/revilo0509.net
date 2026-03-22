@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@icons-pack/svelte-simple-icons':
+        specifier: ^7.2.0
+        version: 7.2.0(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.54.1)(vite@8.0.1(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)))(svelte@5.54.1)(typescript@5.9.3)(vite@8.0.1(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)))(svelte@5.54.1)
       '@sveltejs/adapter-node':
         specifier: ^5.5.4
         version: 5.5.4(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.54.1)(vite@8.0.1(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)))(svelte@5.54.1)(typescript@5.9.3)(vite@8.0.1(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)))
@@ -291,6 +294,13 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@icons-pack/svelte-simple-icons@7.2.0':
+    resolution: {integrity: sha512-zH4YByltlMBipdijJ1ZN4YGmxn2LKLCt+wCDC1rF0+3yor95Df090lZ5wfsN/UN4JsLjr7e6nxp6MOsEfYv/cQ==}
+    engines: {node: '>=24', pnpm: '>=10'}
+    peerDependencies:
+      '@sveltejs/kit': ^2.5.0
+      svelte: ^5.0.0
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1572,6 +1582,11 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.4':
     optional: true
+
+  '@icons-pack/svelte-simple-icons@7.2.0(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.54.1)(vite@8.0.1(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)))(svelte@5.54.1)(typescript@5.9.3)(vite@8.0.1(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)))(svelte@5.54.1)':
+    dependencies:
+      '@sveltejs/kit': 2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.54.1)(vite@8.0.1(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1)))(svelte@5.54.1)(typescript@5.9.3)(vite@8.0.1(@types/node@25.5.0)(esbuild@0.27.4)(jiti@2.6.1))
+      svelte: 5.54.1
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

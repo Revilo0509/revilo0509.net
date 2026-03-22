@@ -1,38 +1,40 @@
 <script lang="ts">
-    import dnd from '$lib/assets/icons/statusIcons/dnd.png';
-    import idle from '$lib/assets/icons/statusIcons/idle.png';
-    import offline from '$lib/assets/icons/statusIcons/offline.png';
-    import online from '$lib/assets/icons/statusIcons/online.png';
+    import dnd from '$lib/assets/icons/status/dnd.png';
+    import idle from '$lib/assets/icons/status/idle.png';
+    import offline from '$lib/assets/icons/status/offline.png';
+    import online from '$lib/assets/icons/status/online.png';
+    import {
+        SiDiscord,
+        SiGithub,
+        SiReddit,
+        SiSteam,
+        SiTiktok,
+        SiTwitch,
+    } from '@icons-pack/svelte-simple-icons';
 
-    import discord from '$lib/assets/icons/socialIcons/discord.svg';
-    import github from '$lib/assets/icons/socialIcons/github.svg';
-    import reddit from '$lib/assets/icons/socialIcons/reddit.svg';
-    import steam from '$lib/assets/icons/socialIcons/steam.svg';
-    import tiktok from '$lib/assets/icons/socialIcons/tiktok.svg';
-    import twitch from '$lib/assets/icons/socialIcons/twitch.svg';
     import { onMount } from 'svelte';
 
     const socials = [
         {
             name: 'Discord',
-            icon: discord,
+            icon: SiDiscord,
             link: 'https://discord.com/users/565162541748322334',
         },
-        { name: 'GitHub', icon: github, link: 'https://github.com/Revilo0509' },
+        { name: 'GitHub', icon: SiGithub, link: 'https://github.com/Revilo0509' },
         {
             name: 'Reddit',
-            icon: reddit,
+            icon: SiReddit,
             link: 'https://www.reddit.com/user/Revilo_EMC/',
         },
-        { name: 'Steam', icon: steam, link: 'https://store.steampowered.com/' },
+        { name: 'Steam', icon: SiSteam, link: 'https://store.steampowered.com/' },
         {
             name: 'TikTok',
-            icon: tiktok,
+            icon: SiTiktok,
             link: 'https://www.tiktok.com/@revilo50',
         },
         {
             name: 'Twitch',
-            icon: twitch,
+            icon: SiTwitch,
             link: 'https://www.twitch.tv/revilo0509',
         },
     ];
@@ -68,10 +70,11 @@
     {#each socials as social (social.name)}
         <a class="clickable flex items-center justify-center" href={social.link}>
             <div class="relative">
-                <img class="h-16 w-16" src={social.icon} alt={social.name} />
-                {#if social.name == 'Discord'}
+                <social.icon size={64} />
+
+                {#if social.name === 'Discord'}
                     <img
-                        class="absolute -right-1.5 -bottom-1.5 h-8 w-8 bg-background p-1.5 rounded-full"
+                        class="bg-background absolute -right-1.5 -bottom-1.5 h-8 w-8 rounded-full p-1.5"
                         src={statusIcon}
                         alt="status icon"
                     />
