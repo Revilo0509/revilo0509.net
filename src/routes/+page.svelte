@@ -5,6 +5,6 @@
             alt="profile"
             class="rounded-[50%]"
         />
-        <h1 class="m-4 text-3xl font-extrabold">Revilo0509</h1>
+        <h1 class="m-4 text-3xl font-extrabold text-center">Revilo0509</h1>
     </a>
 </div>
