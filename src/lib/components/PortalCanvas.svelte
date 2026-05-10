@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import type { Snippet } from "svelte";
-	import { SvelteMap } from "svelte/reactivity";
+	import type { Snippet } from 'svelte';
+	import { SvelteMap } from 'svelte/reactivity';
 
 	const snippets = new SvelteMap<string, Set<Snippet>>();
 

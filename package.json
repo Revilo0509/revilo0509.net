@@ -49,6 +49,7 @@
 		"@threlte/extras": "^9.15.1",
 		"@types/three": "^0.184.1",
 		"discord.js": "^14.26.4",
+		"lucide-svelte": "^1.0.1",
 		"mode-watcher": "^1.1.0",
 		"three": "^0.184.0"
 	}
