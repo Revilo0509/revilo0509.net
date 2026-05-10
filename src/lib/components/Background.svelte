@@ -13,10 +13,7 @@
 	let innerWidth = $state(0);
 	let innerHeight = $state(0);
 
-	let radius = $derived.by(() => {
-		if (innerHeight < innerWidth) return innerHeight / 3;
-		return innerWidth / 3;
-	});
+	let radius = $derived(Math.min(innerWidth, innerHeight) / 3);
 
 	// svelte-ignore state_referenced_locally
 	const geometry = new SphereGeometry(radius, sphereWidthSegments, sphereHeightSegments);
