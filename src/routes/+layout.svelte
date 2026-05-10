@@ -1,42 +1,29 @@
 <script lang="ts">
-    import './index.css';
-    import favicon from '$lib/assets/icons/favicon.svg';
-    import Background from '$lib/components/Background.svelte';
-    import Header from '$lib/components/Header.svelte';
-    import '$lib/i18n';
-    const isDev = import.meta.env.DEV;
+	import './layout.css';
+	import favicon from '$lib/assets/icons/favicon.svg';
+	import App from '$lib/components/App.svelte';
+	import PortalCanvas from '$lib/components/PortalCanvas.svelte';
+	import { ModeWatcher } from 'mode-watcher';
+	import { Canvas } from '@threlte/core';
+	import Background from '$lib/components/Background.svelte';
 
-    let { children } = $props();
-
-    import { onNavigate } from '$app/navigation';
-
-    onNavigate((navigation) => {
-        if (!document.startViewTransition) return;
-
-        return new Promise((resolve) => {
-            document.startViewTransition(async () => {
-                resolve();
-                await navigation.complete;
-            });
-        });
-    });
+	let { children } = $props();
 </script>
 
 <svelte:head>
-    {#if !isDev}
-        <script
-            defer
-            src="https://analytics.revilo0509.net/script.js"
-            data-website-id="1cdbc11c-649e-47bf-947e-a714a833104b"
-        ></script>
-    {/if}
-
-    <link rel="icon" href={favicon} />
+	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<Background />
-<Header />
+<ModeWatcher />
 
-<div class="h-screen w-screen">
-    {@render children()}
+<div class="absolute top-0 z-1 h-dvh w-dvw">
+	<PortalCanvas id="1" />
+	<Canvas>
+		<Background />
+		<PortalCanvas id="canvas" />
+	</Canvas>
 </div>
+
+<App>
+	{@render children()}
+</App>
