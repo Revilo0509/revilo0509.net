@@ -9,5 +9,5 @@
 <HorizontalScroll class="z-1">
 	<Hero />
 	<About />
-	<Experiences />
+	<!--<Experiences />-->
 </HorizontalScroll>
