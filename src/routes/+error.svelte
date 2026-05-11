@@ -1,17 +1,14 @@
-<script lang="ts">
-    import { page } from '$app/state';
+<script>
+	import { page } from '$app/state';
+	import { buttonVariants } from '$lib/components/ui/button/button.svelte';
+	import { cn } from '$lib/utils';
+	import { MoveUpRight } from 'lucide-svelte';
+	import { resolve } from '$app/paths';
 </script>
 
-<div class="flex h-full w-full flex-col items-center justify-center">
-    <h1
-        style="text-shadow: 0px 0px 10px rgba(255,0,0,0.5);"
-        class="text-6xl font-extrabold text-red-600 shadow-red-600"
-    >
-        {page.error?.message}
-    </h1>
-    <a
-        href="/"
-        class="clickable bg-background border-background-700 m-8 rounded-4xl border p-4 pr-8 pl-8 font-bold"
-        >Go home</a
-    >
+<div class="z-1 flex flex-1 flex-col items-center justify-center">
+	<span class="text-4xl font-extrabold sm:text-8xl">{page.status} {page.error?.message}</span>
+	<a href={resolve('/')} class={cn(buttonVariants({ variant: 'outline' }), 'mt-2')}>
+		Go Home<MoveUpRight />
+	</a>
 </div>
