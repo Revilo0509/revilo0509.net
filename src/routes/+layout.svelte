@@ -4,6 +4,7 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import Background from '$lib/components/Background/Background.svelte';
 	import { onNavigate } from '$app/navigation';
+	import { dev } from '$app/environment';
 
 	let { children } = $props();
 
@@ -21,6 +22,13 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	{#if !dev}
+		<script
+			defer
+			src="https://analytics.revilo0509.net/script.js"
+			data-website-id="1cdbc11c-649e-47bf-947e-a714a833104b"
+		></script>
+	{/if}
 </svelte:head>
 
 <ModeWatcher />
