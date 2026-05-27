@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 services:
     app:
         build:
@@ -7,12 +7,12 @@ services:
         env_file:
             - .env
         ports:
-            - '3002:3000'
+            - "3002:3000"
         environment:
             - NODE_ENV=production
         restart: always
         healthcheck:
-            test: ['CMD', 'wget', '--spider', '-q', 'http://localhost:3000']
+            test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
             interval: 30s
             timeout: 10s
             retries: 3
