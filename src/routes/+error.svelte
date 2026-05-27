@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 	import { buttonVariants } from '$lib/components/ui/button/button.svelte';
 	import { cn } from '$lib/utils';
-	import { MoveUpRight } from 'lucide-svelte';
+	import { MoveUpRight } from '@lucide/svelte';
 	import { resolve } from '$app/paths';
 </script>
 

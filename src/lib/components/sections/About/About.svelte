@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Clock, MapPin, MoveRight } from 'lucide-svelte';
+	import { Clock, MapPin, MoveRight } from '@lucide/svelte';
 	import PageSection from '../../PageSection.svelte';
 	import { SvelteDate } from 'svelte/reactivity';
 	import InfoItem from './InfoItem.svelte';

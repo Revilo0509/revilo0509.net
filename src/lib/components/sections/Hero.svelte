@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MoveRight } from 'lucide-svelte';
+	import { MoveRight } from '@lucide/svelte';
 	import PageSection from '../PageSection.svelte';
 	import { buttonVariants } from '../ui/button';
 	import { cn } from '$lib/utils';
