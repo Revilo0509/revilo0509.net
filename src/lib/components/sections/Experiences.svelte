@@ -21,4 +21,4 @@
     const projects = [] as const;
 </script>
 
-<PageSection id="experiences">wda</PageSection>
+<PageSection id="experiences">experiences</PageSection>

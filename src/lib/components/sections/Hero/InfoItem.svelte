@@ -11,6 +11,6 @@
 </script>
 
 <li class="flex">
-    <Icon id="time" color="#3e3e3e" />
+    <Icon id="time" />
     <Label class="ml-1" for="time">{label}</Label>
 </li>
