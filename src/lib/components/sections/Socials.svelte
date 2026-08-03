@@ -1,45 +1,54 @@
 <script lang="ts">
+    import { siCodeberg, siDiscord, siGithub, siTwitch, siYoutube, type SimpleIcon } from "simple-icons";
     import PageSection from "../PageSection.svelte";
+    import Icon from "../Icon.svelte";
 
-    const links = [
+    type Link = {
+        icon: SimpleIcon;
+        href: string;
+    };
+
+    const links: Link[] = [
         {
-            label: "Discord",
-            href: "https://discord.com/users/565162541748322334",
+            icon: siGithub,
+            href: "https://github.com/revilo0509"
         },
         {
-            label: "Github",
-            href: "https://github.com/revilo0509",
-        },
-        {
-            label: "Codeberg",
+            icon: siCodeberg,
             href: "https://codeberg.org/Revilo0509",
         },
         {
-            label: "Zyner Git",
-            href: "https://git.zyner.org/Revilo0509",
+            icon: siDiscord,
+            href: "https://discord.com/users/565162541748322334",
         },
         {
-            label: "Email",
-            href: "mailto:oliver.elfverson@outlook.com",
-        },
-        {
-            label: "Twitch",
+            icon: siTwitch,
             href: "https://www.twitch.tv/revilo0509",
         },
         {
-            label: "Youtube",
+            icon: siYoutube,
             href: "https://www.youtube.com/@Revilo0509",
         },
-    ] as const;
+    ];
 </script>
 
 <PageSection id="socials">
-    <h1 class="text-4xl font-extrabold mb-4">Socials</h1>
-    <ul class="gap-2 grid grid-cols-2">
-        {#each links as link (link.label)}
-            <li class="text-xl bg-background outline p-3 rounded-lg">
-                <a href={link.href} aria-label={link.label + " link"} class="hover:underline">
-                    {link.label}
+    <h1 class="text-5xl font-extrabold mb-4">Socials</h1>
+
+    <ul class="flex flex-col gap-4">
+        {#each links as link (link.icon.title)}
+            <li>
+                <a
+                    href={link.href}
+                    aria-label={`${link.icon.title} link`}
+                    class="block hover:underline transition-all duration-150"
+                >
+                    <div class="text-xl bg-background outline p-3 rounded-lg flex hover:scale-125 transition-transform">
+                        <Icon icon={link.icon} />
+                        <span class="pl-4">
+                            {link.icon.title}
+                        </span>
+                    </div>
                 </a>
             </li>
         {/each}
