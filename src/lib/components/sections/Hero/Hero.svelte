@@ -23,8 +23,8 @@
         </section>
 
         <div class="flex justify-center">
-            <a href="#socials" class={cn(buttonVariants({ variant: "outline" }), "mt-4")}>
-                Socials
+            <a href="#experiences" class={cn(buttonVariants({ variant: "outline" }), "mt-4")}>
+                Continue
                 <MoveRight />
             </a>
         </div>
