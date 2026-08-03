@@ -19,5 +19,5 @@ export function startDiscord(token: string, userId: string, guildId: string) {
         console.log("New presence: " + newPresence.status);
     });
 
-    client.login(token);
+    client.login(token).catch(console.error);
 }
