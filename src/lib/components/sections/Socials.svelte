@@ -43,7 +43,7 @@
                     aria-label={`${link.icon.title} link`}
                     class="block hover:underline transition-all duration-150"
                 >
-                    <div class="text-xl bg-background outline p-3 rounded-lg flex hover:scale-125 transition-transform">
+                    <div class="text-xl bg-background outline p-3 rounded-lg flex hover:scale-110 transition-transform">
                         <Icon icon={link.icon} />
                         <span class="pl-4">
                             {link.icon.title}
