@@ -7,11 +7,12 @@ on:
 
 jobs:
     build:
+        name: build
         runs-on: ubuntu-act
 
         steps:
-            - name: Docker meta
-              id: meta
+            - id: meta
+              name: Docker meta
               uses: docker/metadata-action@v6
               with:
                   images: |
@@ -26,13 +27,13 @@ jobs:
                       type=semver,pattern={{major}}
                       type=sha
 
-            - name: Login to GHCR
-              if: codeberg.event_name != 'pull_request'
+            - if: forgejo.event_name != 'pull_request'
+              name: Login to Codeberg Container Registry
               uses: docker/login-action@v4
               with:
-                  registry: ghcr.io
-                  username: ${{ codeberg.repository_owner }}
                   password: ${{ secrets.CODEBERG_TOKEN }}
+                  registry: codeberg.org
+                  username: ${{ forgejo.repository_owner }}
 
             - name: Set up QEMU
               uses: docker/setup-qemu-action@v4
@@ -43,8 +44,8 @@ jobs:
             - name: Build and push
               uses: docker/build-push-action@v7
               with:
-                  push: ${{ codeberg.event_name != 'pull_request' }}
-                  tags: ${{ steps.meta.outputs.tags }}
-                  labels: ${{ steps.meta.outputs.labels }}
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
+                  labels: ${{ steps.meta.outputs.labels }}
+                  push: ${{ forgejo.event_name != 'pull_request' }}
+                  tags: ${{ steps.meta.outputs.tags }}
