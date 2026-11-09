@@ -16,7 +16,7 @@ import PageSection from "../PageSection.svelte";
             link: "https://sgc.se",
             roles: ["Devsnubbe (Aka Developer)"],
             start: "2026-03-01",
-            end: "2026-09-29",
+            end: "ongoing",
         },
     ] as const;
 </script>
