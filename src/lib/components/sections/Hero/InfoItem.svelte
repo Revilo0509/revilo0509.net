@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Label from "$lib/components/ui/label/label.svelte";
+    import Label from "#lib/components/ui/label/label.svelte";
     import type { MapPin } from "@lucide/svelte";
 
     interface props {

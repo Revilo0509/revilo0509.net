@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { Clock, MapPin } from "@lucide/svelte";
 import PageSection from "../PageSection.svelte";
 
     const experiences = [

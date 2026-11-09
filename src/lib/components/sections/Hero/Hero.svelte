@@ -2,10 +2,10 @@
     import { Clock, MapPin, MoveRight } from "@lucide/svelte";
     import PageSection from "../../PageSection.svelte";
     import InfoItem from "./InfoItem.svelte";
-    import getDisplay from "$lib/components/TimeDiff.svelte";
+    import getDisplay from "#lib/components/TimeDiff.svelte.js";
     import IAMA from "./IAMA.svelte";
-    import { buttonVariants } from "$lib/components/ui/button";
-    import { cn } from "$lib/utils";
+    import { buttonVariants } from "#lib/components/ui/button/index.js";
+    import { cn } from "#lib/utils.js";
 </script>
 
 <PageSection id="hero">

@@ -1,7 +1,7 @@
 <script>
     import { page } from "$app/state";
-    import { buttonVariants } from "$lib/components/ui/button/button.svelte";
-    import { cn } from "$lib/utils";
+    import { buttonVariants } from "#lib/components/ui/button/button.svelte";
+    import { cn } from "#lib/utils.js";
     import { MoveUpRight } from "@lucide/svelte";
     import { resolve } from "$app/paths";
 </script>

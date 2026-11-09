@@ -1,35 +1,39 @@
 <script lang="ts">
-    import { cn } from "$lib/utils";
+    import { cn } from "#lib/utils.js";
     import { onMount, type Snippet } from "svelte";
     import type { HTMLAttributes } from "svelte/elements";
 
+    interface Props extends HTMLAttributes<HTMLDivElement> {
+        children: Snippet;
+    }
+
+    let container: HTMLDivElement;
+
+    const { children, ...rest }: Props = $props();
+
     onMount(() => {
-        const container = document.querySelector(".horizontal-scroll");
+        const handler = (event: WheelEvent) => {
+            event.preventDefault();
 
-        const handler = (e: WheelEvent) => {
-            e.preventDefault();
-
-            container?.scrollBy({
-                left: e.deltaY,
+            container.scrollBy({
+                left: event.deltaY,
                 behavior: "smooth",
             });
         };
 
-        container?.addEventListener("wheel", handler, { passive: false });
+        container.addEventListener("wheel", handler, { passive: false });
 
         return () => {
-            container?.removeEventListener("wheel", handler);
+            container.removeEventListener("wheel", handler);
         };
     });
-
-    interface props extends HTMLAttributes<HTMLDivElement> {
-        children: Snippet;
-    }
-
-    const { children, ...rest }: props = $props();
 </script>
 
-<div {...rest} class={cn("horizontal-scroll", rest.class)}>
+<div
+    bind:this={container}
+    {...rest}
+    class={cn("horizontal-scroll", rest.class)}
+>
     {@render children()}
 </div>
 

@@ -1,10 +1,10 @@
 <script lang="ts">
     import "./layout.css";
-    import favicon from "$lib/assets/icons/favicon.svg";
+    import favicon from "#lib/assets/icons/favicon.svg";
     import { ModeWatcher } from "mode-watcher";
-    import Background from "$lib/components/Background/Background.svelte";
+    import Background from "#lib/components/Background/Background.svelte";
     import { onNavigate } from "$app/navigation";
-    import { dev } from "$app/environment";
+    import { dev } from "$app/env";
 
     let { children } = $props();
 
@@ -27,7 +27,7 @@
     {/if}
 </svelte:head>
 
-<ModeWatcher />
+<ModeWatcher defaultMode={"dark"}/>
 
 <div class="flex h-dvh w-dvw">
     {@render children()}

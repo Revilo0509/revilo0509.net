@@ -1,8 +1,8 @@
 <script lang="ts">
     import { T, useTask } from "@threlte/core";
     import { SphereGeometry, ShaderMaterial } from "three";
-    import fragmentShader from "$lib/shaders/ball/fragment.glsl?raw";
-    import vertexShader from "$lib/shaders/ball/vertex.glsl?raw";
+    import fragmentShader from "#lib/shaders/ball/fragment.glsl?raw";
+    import vertexShader from "#lib/shaders/ball/vertex.glsl?raw";
     import { Spring } from "svelte/motion";
 
     const sphereRadius = 1;

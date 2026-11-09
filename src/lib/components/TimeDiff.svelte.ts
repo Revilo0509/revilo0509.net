@@ -17,10 +17,13 @@ const swedenFormatted = $derived(
         timeZone: "Europe/Stockholm",
         hour: "2-digit",
         minute: "2-digit",
-    })
+    }),
 );
 
-const timeDiff = $derived(tzOffsetHours(now, "Europe/Stockholm") - tzOffsetHours(now, Intl.DateTimeFormat().resolvedOptions().timeZone));
+const timeDiff = $derived(
+    tzOffsetHours(now, "Europe/Stockholm") -
+        tzOffsetHours(now, Intl.DateTimeFormat().resolvedOptions().timeZone),
+);
 
 const formattedTimeDifference = $derived(`(${timeDiff >= 0 ? "+" : ""}${timeDiff})`);
 
